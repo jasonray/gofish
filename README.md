@@ -1,63 +1,34 @@
-Overview
-========
-This is a starter java project
+Go Fish
+=======
 
-Note on gradle
-==============
-The build scripts are built around gradle.  You can install gradle or use the provided version.  
+Rules of Go Fish
+----------------
+This game is often just known as Fish, but the name "Fish" (or Canadian Fish or Russian Fish) is also sometimes used for the more complex partnership game Literature. Go Fish is best for 3-6 players, but it is possible for 2 to play. A standard 52 card deck is used. The dealer deals 5 cards to each player (7 each for 2 players). The remaining cards are placed face down to form a stock.
 
-To install using [brew](http://mxcl.github.com/homebrew/), run `brew install gradle`.
+The player to dealer's left starts. A turn consists of asking a specific player for a specific rank. For example, if it is my turn I might say: 'Mary, please give me your jacks'. The player who asks must already hold at least one card of the requested rank, so I must hold at least one jack to say this. If the player who was asked (Mary) has cards of the named rank (jacks in this case), she must give all her cards of this rank to the player who asked for them. That player then gets another turn and may again ask any player for any rank already held by the asker.
 
-To install manually, goto [gradle](http://www.gradle.org/downloads).
+If the person asked does not have any cards of the named rank, they say 'Go fish!'. The asker must then draw the top card of the undealt stock. If the drawn card is the rank asked for, the asker shows it and gets another turn. If the drawn card is not the rank asked for, the asker keeps it, but the turn now passes to the player who said 'Go fish!'.
 
-To use the provided version, instead of running `gradle`, run `./g`
+As soon as a player collects a book of 4 cards of the same rank, this must be shown and discarded face down. The game continues until either someone has no cards left in their hand or the stock runs out. The winner is the player who then has the most books.
 
-Opening in Eclipse
-==================
-If you use Eclipse, the gradle scripts are nice enough to create your project and classpath files.
+Full [game rules](http://www.pagat.com/quartet/gofish.html)
 
-The first time you open the project, first create the eclipse project files:
 
-```
-gradle eclipse
-```
+Rule of Object Calisthenics 
+---------------------------
+1. One level of indentation per method
+2. Don’t use the ELSE keyword
+3. Wrap all primitives and Strings
+4. First class collections
+5. One dot per line
+6. Don’t abbreviate
+7. Keep all entities small
+8. No classes with more than two instance variables
+9. No getters/setters/properties
 
-Now you can import the project into eclipse.
+Full list of [object calsthenics rules](http://www.bennadel.com/resources/uploads/2012/ObjectCalisthenics.pdf)
 
-If you change dependencies, update the classpath:
 
-```
-gradle cleanEclipseClasspath eclipseClasspath
-```
-
-How to Run, Method 1
-====================
-
-Compile
--------
-To compile:
-```
-gradle fatjar
-```
-
-Run
----
-```
-java -cp build/libs/jar-starterkit.jar jayray.net.hello.HelloWorld
-```
-
-How to Run, Method 2
-====================
-
-Compile
--------
-To compile:
-```
-gradle installApp
-```
-
-Run
----
-```
-build/install/jar-starterkit/bin/jar-starterkit
-```
+To run tests
+------------
+gradle test
