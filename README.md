@@ -31,4 +31,4 @@ Full list of [object calsthenics rules](http://www.bennadel.com/resources/upload
 
 To run tests
 ------------
-gradle test
+```gradle test```
