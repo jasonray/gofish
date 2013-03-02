@@ -8,8 +8,23 @@ public class Card {
         this.rank = rank;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Card) {
+            return isCard((Card) o);
+        } else if (o instanceof Rank) {
+            return isRank((Rank) o);
+        } else {
+            return super.equals(o);
+        }
+    }
+
     public boolean isRank(Rank rank) {
         return this.rank == rank;
+    }
+
+    public boolean isCard(Card card) {
+        return isRank(card.rank);
     }
 
     public static Card Ace() {

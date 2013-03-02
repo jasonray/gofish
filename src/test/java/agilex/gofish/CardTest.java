@@ -34,4 +34,22 @@ public class CardTest {
         Card card = new Card(Rank.Ace);
         assertTrue(!card.isRank(Rank.Two));
     }
+
+    @Test
+    public void checkEquals() {
+        Card card = new Card(Rank.Ace);
+       assertTrue(card.equals(Card.Ace()));
+    }
+
+    @Test
+    public void checkNotEquals() {
+        Card card = new Card(Rank.Ace);
+        assertTrue(!card.equals(Card.Two()));
+    }
+
+    @Test
+    public void checkRankEquals() {
+        Card card = new Card(Rank.Ace);
+        assertTrue(card.equals(Rank.Ace ));
+    }
 }
