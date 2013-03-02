@@ -29,9 +29,32 @@ public class HandTest {
     }
 
     @Test
+    public void checkEmptyHand() throws Exception {
+        Hand hand = new Hand();
+
+        Cards cards = hand.doYouHaveAny(Rank.Ace);
+        assertEquals(0, cards.size());
+    }
+
+    @Test
     public void checkThatCardRemovedFromHand() throws Exception {
         Hand hand = new Hand();
         hand.addCardToHand(Card.Ace());
+
+        Cards cards = hand.doYouHaveAny(Rank.Ace);
+        assertEquals(1, cards.size());
+        assertTrue(cards.get(0).isRank(Rank.Ace));
+
+        cards = hand.doYouHaveAny(Rank.Ace);
+        assertEquals(0, cards.size());
+    }
+
+    @Test
+    public void checkForCard() throws Exception {
+        Hand hand = new Hand();
+        hand.addCardToHand(Card.Two());
+        hand.addCardToHand(Card.Ace());
+        hand.addCardToHand(Card.Three());
 
         Cards cards = hand.doYouHaveAny(Rank.Ace);
         assertEquals(1, cards.size());
