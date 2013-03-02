@@ -2,6 +2,7 @@ package agilex.gofish;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,9 +13,22 @@ import java.util.Collection;
  */
 public class Hand {
 
-    private Collection<Card> cards = new ArrayList<Card>();
+    private Cards cards = new Cards();
 
     public void addCardToHand(Card card) {
         cards.add(card);
+    }
+
+    public Cards doYouHaveAny(Rank rank) {
+        Cards cardsFromHandThatMatchRank = new Cards();
+
+        for (Iterator<Card> cardIterator = cards.iterator(); cardIterator.hasNext(); ) {
+            Card card = cardIterator.next();
+            if (card.isRank(rank)) {
+                cardsFromHandThatMatchRank.add(card);
+                cardIterator.remove();
+            }
+        }
+        return cardsFromHandThatMatchRank;
     }
 }
