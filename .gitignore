@@ -9,3 +9,7 @@ build
 bin
 
 .DS_Store
+
+.idea
+*.iml
+out
