@@ -14,7 +14,7 @@ As soon as a player collects a book of 4 cards of the same rank, this must be sh
 Full [game rules](http://www.pagat.com/quartet/gofish.html)
 
 
-Rule of Object Calisthenics 
+Rules of Object Calisthenics 
 ---------------------------
 1. One level of indentation per method
 2. Don’t use the ELSE keyword
